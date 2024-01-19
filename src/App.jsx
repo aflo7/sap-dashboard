@@ -28,7 +28,7 @@ function App() {
     'Approve Requisitions',
     'Order From Requisitions',
     'Approve Purchase Orders'
-  ]
+  ];
 
   return (
     <>
@@ -63,7 +63,7 @@ function App() {
               return <Square key={i} text={item} />;
             })}
           </div>
-          <div style={{padding: '10px'}}>ERP Logistics (MM) Apps</div>
+          <div style={{ padding: '10px' }}>ERP Logistics (MM) Apps</div>
           <div className="square-wrapper">
             {bottomItems.map((item, i) => {
               return <Square key={i} text={item} />;
