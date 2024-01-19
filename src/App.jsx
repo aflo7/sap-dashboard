@@ -10,7 +10,8 @@ import { CiBullhorn } from 'react-icons/ci';
 import { CiBellOn } from 'react-icons/ci';
 import { CiUser } from 'react-icons/ci';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import Square from './components/square';
+// import Square from './components/Square.jsx';
+import Square from './components/Square';
 
 function App() {
   const [count, setCount] = useState(0);
