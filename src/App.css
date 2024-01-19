@@ -63,4 +63,7 @@ nav {
   .square-wrapper > div {
     padding-bottom: 150px;
   }
+  .right-nav {
+    gap: 30px;
+  }
 }

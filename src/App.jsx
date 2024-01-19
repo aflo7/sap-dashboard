@@ -44,11 +44,11 @@ function App() {
             </div>
           </div>
           <div className="right-nav">
-            <CiSearch size="1.5rem" />
-            <CiMail size="1.5rem" />
-            <CiBullhorn size="1.5rem" />
-            <CiBellOn size="1.5rem" />
-            <CiUser size="1.5rem" />
+            <CiSearch size="2rem" />
+            <CiMail size="2rem" />
+            <CiBullhorn size="2rem" />
+            <CiBellOn size="2rem" />
+            <CiUser size="2rem" />
           </div>
         </nav>
       </div>

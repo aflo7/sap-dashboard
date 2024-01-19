@@ -2,6 +2,7 @@ body {
   margin: 0;
   background-color: rgb(134, 159, 199);
   /* font-size: 1.5rem; */
+  font-family: Arial, sans-serif;
 }
 
 * {
