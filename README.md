@@ -1,7 +1,9 @@
-A mock/remake of an SAP Dashboard
+A mock/remake of an SAP Dashboard.
 
-Technologies used: Javascript, React, HTML, CSS
+For the frontend, I used React
 
-Here is a screenshot:
+For the backend, I used an ASP.NET Rest API
+
+Here is a screenshot of the frontend:
 
 ![alt](./ss.png)
