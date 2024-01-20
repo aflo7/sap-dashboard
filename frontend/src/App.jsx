@@ -1,22 +1,18 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import sapLogo from './assets/sap-logo.png';
-import { FaSearch } from 'react-icons/fa';
 import { CiSearch } from 'react-icons/ci';
 import { CiMail } from 'react-icons/ci';
 import { CiBullhorn } from 'react-icons/ci';
 import { CiBellOn } from 'react-icons/ci';
 import { CiUser } from 'react-icons/ci';
 import { IoMdArrowDropdown } from 'react-icons/io';
-// import Square from './components/Square.jsx';
 import Square from './components/Square';
 
 function App() {
   const [count, setCount] = useState(0);
 
-  const items = [
+  const humanCapitalItems = [
     'My Paystubs',
     'My Benefits',
     'My Leave Requests',
@@ -25,7 +21,7 @@ function App() {
     'Approve Timesheets'
   ];
 
-  const bottomItems = [
+  const erpApps = [
     'Approve Requisitions',
     'Order From Requisitions',
     'Approve Purchase Orders'
@@ -60,13 +56,13 @@ function App() {
             <div>ERP Logistics</div>
           </div>
           <div className="square-wrapper">
-            {items.map((item, i) => {
+            {humanCapitalItems.map((item, i) => {
               return <Square key={i} text={item} />;
             })}
           </div>
           <div style={{ padding: '10px' }}>ERP Logistics (MM) Apps</div>
           <div className="square-wrapper">
-            {bottomItems.map((item, i) => {
+            {erpApps.map((item, i) => {
               return <Square key={i} text={item} />;
             })}
           </div>
