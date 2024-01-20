@@ -111,11 +111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andres\\source\\repos\\backend\\backend.csproj",
+      "projectUniqueName": "C:\\Users\\andres\\source\\repos\\sap-dashboard\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\andres\\source\\repos\\backend\\backend.csproj",
+      "projectPath": "C:\\Users\\andres\\source\\repos\\sap-dashboard\\backend\\backend.csproj",
       "packagesPath": "C:\\Users\\andres\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andres\\source\\repos\\backend\\obj\\",
+      "outputPath": "C:\\Users\\andres\\source\\repos\\sap-dashboard\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andres\\AppData\\Roaming\\NuGet\\NuGet.Config",

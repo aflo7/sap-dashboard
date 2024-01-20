@@ -8,11 +8,29 @@ import { CiBellOn } from 'react-icons/ci';
 import { CiUser } from 'react-icons/ci';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import Square from './components/Square';
+import { useEffect } from 'react';
+import axios from 'axios'
 
 function App() {
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
+    const [humanCapitalItems, setHumanCapitalItems] = useState([])
+    const [erpApps, setErpApps] = useState([])
 
-  const humanCapitalItems = [
+    useEffect(() => {
+        axios.get('http://localhost:5126/human-capital-items').then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log(error)
+        })
+
+        /*axios.get('http://localhost:5126/erp-map-items').then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log(error)
+        })*/
+    }, [])
+
+  /*const humanCapitalItems = [
     'My Paystubs',
     'My Benefits',
     'My Leave Requests',
@@ -25,7 +43,7 @@ function App() {
     'Approve Requisitions',
     'Order From Requisitions',
     'Approve Purchase Orders'
-  ];
+  ];*/
 
   return (
     <>
