@@ -8,6 +8,17 @@ builder.Services.ConfigureHttpJsonOptions(options =>
     options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
 });
 
+var allowSpecificOrigins = "arbitraryName";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: allowSpecificOrigins,
+        policy =>
+        {
+            policy.AllowAnyOrigin();
+        }
+        );
+});
+
 var app = builder.Build();
 
 var sampleTodos = new Todo[] {
@@ -46,6 +57,10 @@ humanCapitalApi.MapGet("/", () => humanCapitalItems);
 
 var erpMapsApi = app.MapGroup("/erp-map-items");
 erpMapsApi.MapGet("/", () => erpMapsItems);
+
+
+
+app.UseCors(allowSpecificOrigins);
 
 app.Run();
 
