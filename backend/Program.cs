@@ -21,14 +21,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-var sampleTodos = new Todo[] {
-    new(1, "Walk the dog"),
-    new(2, "Do the dishes", DateOnly.FromDateTime(DateTime.Now)),
-    new(3, "Do the laundry", DateOnly.FromDateTime(DateTime.Now.AddDays(1))),
-    new(4, "Clean the bathroom"),
-    new(5, "Clean the car", DateOnly.FromDateTime(DateTime.Now.AddDays(2)))
-};
-
 var humanCapitalItems = new HumanCapitalItems[] {
     new(1, "My Paystubs"),
     new(2, "My Benefits"),
@@ -44,14 +36,6 @@ var erpMapsItems = new ErpApps[] {
     new(3, "Approve Purchase Orders")
 };
 
-
-var todosApi = app.MapGroup("/todos");
-todosApi.MapGet("/", () => sampleTodos);
-todosApi.MapGet("/{id}", (int id) =>
-    sampleTodos.FirstOrDefault(a => a.Id == id) is { } todo
-        ? Results.Ok(todo)
-        : Results.NotFound());
-
 var humanCapitalApi = app.MapGroup("/human-capital-items");
 humanCapitalApi.MapGet("/", () => humanCapitalItems);
 
@@ -64,12 +48,10 @@ app.UseCors(allowSpecificOrigins);
 
 app.Run();
 
-public record Todo(int Id, string? Title, DateOnly? DueBy = null, bool IsComplete = false);
 public record HumanCapitalItems(int Id, string Name);
 
 public record ErpApps(int Id, string Name);
 
-[JsonSerializable(typeof(Todo[]))]
 
 [JsonSerializable(typeof(HumanCapitalItems[]))]
 
