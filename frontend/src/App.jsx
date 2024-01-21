@@ -12,38 +12,24 @@ import { useEffect } from 'react';
 import axios from 'axios'
 
 function App() {
-    const [count, setCount] = useState(0);
     const [humanCapitalItems, setHumanCapitalItems] = useState([])
     const [erpApps, setErpApps] = useState([])
 
     useEffect(() => {
         axios.get('http://localhost:5126/human-capital-items').then((response) => {
-            console.log(response)
+            console.log(response.data)
+            setHumanCapitalItems(response.data)
+        }).catch((error) => {
+            console.log(error);
+        })
+
+        axios.get('http://localhost:5126/erp-map-items').then((response) => {
+            console.log(response.data)
+            setErpApps(response.data)
         }).catch((error) => {
             console.log(error)
         })
-
-        /*axios.get('http://localhost:5126/erp-map-items').then((response) => {
-            console.log(response)
-        }).catch((error) => {
-            console.log(error)
-        })*/
     }, [])
-
-  /*const humanCapitalItems = [
-    'My Paystubs',
-    'My Benefits',
-    'My Leave Requests',
-    'My Timesheet',
-    'Approve Leave Requests',
-    'Approve Timesheets'
-  ];
-
-  const erpApps = [
-    'Approve Requisitions',
-    'Order From Requisitions',
-    'Approve Purchase Orders'
-  ];*/
 
   return (
     <>
@@ -74,14 +60,14 @@ function App() {
             <div>ERP Logistics</div>
           </div>
           <div className="square-wrapper">
-            {humanCapitalItems.map((item, i) => {
-              return <Square key={i} text={item} />;
+            {humanCapitalItems.map((item) => {
+              return <Square key={item.id} text={item.name} />;
             })}
           </div>
           <div style={{ padding: '10px' }}>ERP Logistics (MM) Apps</div>
           <div className="square-wrapper">
-            {erpApps.map((item, i) => {
-              return <Square key={i} text={item} />;
+            {erpApps.map((item) => {
+              return <Square key={item.id} text={item.name} />;
             })}
           </div>
         </main>
