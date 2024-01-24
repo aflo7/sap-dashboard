@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Text.Json.Serialization;
 
@@ -7,6 +8,17 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 {
     options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
 });
+
+/*class SqlContext : DbContext
+{
+    public SqlContext(DbContextOptions<SqlContext> Options) : base(Options)
+    {
+
+    }
+
+    public DbSet<HumanCapitalItems> HumanCapitalItems { get; set; }
+}*/
+
 
 var allowSpecificOrigins = "arbitraryName";
 builder.Services.AddCors(options =>
